@@ -1,0 +1,16 @@
+<h1>Bien Reviews</h1>
+
+<h2>The best restaurant reviews in the world.</h2>
+
+<p>The random number is <%= @number %><p>
+
+  <%# This is ruby specific. You can insert a var in html. %>
+
+
+<% @reviews.each do |review| %>
+
+  <div class="review">
+    <%= link_to review.title, review_path(review) %>
+  </div>
+
+<% end %>
