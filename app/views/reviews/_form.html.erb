@@ -21,6 +21,11 @@
   </p>
 
   <p>
+    <%= f.label :restaurant %>
+    <%= f.text_field :restaurant %>
+  </p>
+
+  <p>
     <%= f.label :body %>
     <%= f.text_area :body %>
   </p>
@@ -28,6 +33,16 @@
   <p>
     <%= f.label :score %>
     <%= f.number_field :score %>
+  </p>
+
+  <p>
+    <%= f.label :ambience%>
+    <%= f.text_field :ambience %>
+  </p>
+
+  <p>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, placeholder: "XXX-XXX-XXXX"  %>
   </p>
 
   <p>

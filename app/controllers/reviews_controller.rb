@@ -63,15 +63,21 @@ class ReviewsController < ApplicationController
 
     @review = Review.find(params[:id])
 
-    @review.update(form_params)
+    if @review.update(form_params)
+      redirect_to review_path(@review)
+    else
+      render "edit"
+    end
 
-    redirect_to review_path(@review)
+    # @review.update(form_params)
+    #
+    # redirect_to review_path(@review)
 
   end
 
   def form_params
 
-      params.require(:review).permit(:title, :body, :score)
+      params.require(:review).permit(:title, :restaurant, :body, :score, :ambience, :phone_number)
 
   end
 
