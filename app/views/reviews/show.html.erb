@@ -3,6 +3,10 @@
 <h1><%= @review.title %></h1>
 <h2><%= @review.restaurant %></h2>
 
+<div class="address">
+  Address: <%= @review.address %>
+</div>
+
 <div class="score">
   Score: <%= @review.score %>/10
 </div>
@@ -10,6 +14,18 @@
 <% if @review.ambience.present? %>
 <div class="ambience">
   Ambience: <%= @review.ambience %>
+</div>
+<% end %>
+
+<% if @review.cuisine.present? %>
+<div class="cuisine">
+  Cuisine: <%= @review.cuisine %>
+</div>
+<% end %>
+
+<% if @review.price.present? %>
+<div class="price">
+  Price: <%= @review.price %>
 </div>
 <% end %>
 
