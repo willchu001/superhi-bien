@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'geocoder'
 gem 'simple_form'
 gem 'active_link_to'
+gem 'profanity_filter'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

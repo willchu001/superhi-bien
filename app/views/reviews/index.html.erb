@@ -28,7 +28,7 @@
 <% if @reviews.each do |review| %>
   <div class="review">
     <%= link_to review_path(review) do %>
-      <h2><%= review.title %></h2>
+      <h2><%= ProfanityFilter::Base.clean(review.title) %></h2>
       <p>
         <%= review.cuisine %> -
         <%= pluralize review.comments.count, "comment" %>
