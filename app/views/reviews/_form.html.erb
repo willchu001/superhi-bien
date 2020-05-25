@@ -15,7 +15,21 @@
   <% end %>
 
 
-  <p>
+  <%= simple_form_for @review do |f| %>
+    <%= f.input :title %>
+    <%= f.input :restaurant %>
+    <%= f.input :address %>
+    <%= f.input :body %>
+    <%= f.input :score %>
+    <%= f.input :ambience %>
+    <%= f.input :cuisine %>
+    <%= f.input :price %>
+    <%= f.input :phone_number, placeholder: "XXX-XXX-XXXX" %>
+    <%= f.button :submit %>
+  <% end %>
+
+
+  <!-- <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
@@ -64,4 +78,4 @@
     <%= f.submit "Save review" %>
   </p>
 
-<% end %>
+<% end %> -->
