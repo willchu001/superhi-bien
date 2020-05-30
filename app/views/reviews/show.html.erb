@@ -7,6 +7,16 @@
   Address: <%= @review.address %>
 </div>
 
+
+<div class="user">
+  Posted by:
+  <% if @review.user.present? %>
+    <%= link_to @review.user.username, user_path(@review.user) %>
+  <% else %>
+    anonymouse <%= image_tag "noun_Mouse_1046559.svg" %>
+  <% end %>
+</div>
+
 <div class="score">
   Score: <%= @review.score %>/10
 </div>
@@ -37,10 +47,14 @@
   <%= @review.phone_number %>
 </div>
 
-<div class="actions">
-  <%= link_to "Edit this review", edit_review_path(@review) %>
-  <%= link_to "Delete this review", review_path(@review), method: :delete, data: {confirm: "Are you sure?"} %>
-</div>
+<% if @review.user == @current_user %>
+  <div class="actions">
+    <%= link_to "Edit this review", edit_review_path(@review) %>
+    <%= link_to "Delete this review", review_path(@review), method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
+<% else %>
+
+<% end %>
 
 
 <h3>Add a comment</h3>
@@ -58,6 +72,12 @@
   <%= simple_format ProfanityFilter::Base.clean(comment.body) %>
 
   <p class="posted">Posted at <%= time_tag comment.created_at %></p>
+  <p class="posted"> Posted by
+    <% if comment.user.present? %>
+      <%= link_to comment.user.username, user_path(comment.user) %></p>
+    <% else %>
+      anonymouse <%= image_tag "noun_Mouse_1046559.svg" %>
+    <% end %>
 </div>
 
 <% end %>

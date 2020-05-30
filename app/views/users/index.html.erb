@@ -1,0 +1,9 @@
+  <h2>All Users</h2>
+
+<% if @users.each do |user| %>
+      <p>
+        <%= user.username %> (<%= user.email %>)
+      </p>
+<% end.empty? %>
+  <h3>Ain't no users here</h3>
+<% end %>
