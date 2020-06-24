@@ -2,6 +2,7 @@ class Review < ApplicationRecord
 
   has_many :comments
   belongs_to :user
+  has_many :bookmarks
 
   geocoded_by :address
   after_validation :geocode
